@@ -3,7 +3,7 @@
 <h3>Recyclable and Low Fat Products</h3>
 
 Table: Products
-
+```py
 +-------------+---------+
 | Column Name | Type    |
 +-------------+---------+
@@ -11,6 +11,8 @@ Table: Products
 | low_fats    | enum    |
 | recyclable  | enum    |
 +-------------+---------+
+```
+
 product_id is the primary key (column with unique values) for this table.
 low_fats is an ENUM (category) of type ('Y', 'N') where 'Y' means this product is low fat and 'N' means it is not.
 recyclable is an ENUM (category) of types ('Y', 'N') where 'Y' means this product is recyclable and 'N' means it is not.
@@ -28,6 +30,7 @@ Example 1:
 
 Input: 
 Products table:
+```py
 +-------------+----------+------------+
 | product_id  | low_fats | recyclable |
 +-------------+----------+------------+
@@ -37,13 +40,18 @@ Products table:
 | 3           | Y        | Y          |
 | 4           | N        | N          |
 +-------------+----------+------------+
+```
+
 Output: 
+```py
 +-------------+
 | product_id  |
 +-------------+
 | 1           |
 | 3           |
 +-------------+
+```
+
 Explanation: Only products 1 and 3 are both low fat and recyclable.
 
 
@@ -53,7 +61,7 @@ Explanation: Only products 1 and 3 are both low fat and recyclable.
 
 
 Table: Customer
-
+```py
 +-------------+---------+
 | Column Name | Type    |
 +-------------+---------+
@@ -61,6 +69,8 @@ Table: Customer
 | name        | varchar |
 | referee_id  | int     |
 +-------------+---------+
+```
+
 In SQL, id is the primary key column for this table.
 Each row of this table indicates the id of a customer, their name, and the id of the customer who referred them.
  
@@ -77,6 +87,7 @@ Example 1:
 
 Input: 
 Customer table:
+```py
 +----+------+------------+
 | id | name | referee_id |
 +----+------+------------+
@@ -87,7 +98,10 @@ Customer table:
 | 5  | Zack | 1          |
 | 6  | Mark | 2          |
 +----+------+------------+
+```
+
 Output: 
+```py
 +------+
 | name |
 +------+
@@ -97,13 +111,15 @@ Output:
 | Zack |
 +------+
 
+```
+
 
 # CHALLENGE 3 - 595
 
 <h3>Big Countries</h3>
 
 Table: World
-
+```py
 +-------------+---------+
 | Column Name | Type    |
 +-------------+---------+
@@ -113,6 +129,8 @@ Table: World
 | population  | int     |
 | gdp         | bigint  |
 +-------------+---------+
+```
+
 name is the primary key (column with unique values) for this table.
 Each row of this table gives information about the name of a country, the continent to which it belongs, its area, the population, and its GDP value.
  
@@ -133,6 +151,7 @@ Example 1:
 
 Input: 
 World table:
+```py
 +-------------+-----------+---------+------------+--------------+
 | name        | continent | area    | population | gdp          |
 +-------------+-----------+---------+------------+--------------+
@@ -142,20 +161,25 @@ World table:
 | Andorra     | Europe    | 468     | 78115      | 3712000000   |
 | Angola      | Africa    | 1246700 | 20609294   | 100990000000 |
 +-------------+-----------+---------+------------+--------------+
+```
+
 Output: 
+```py
 +-------------+------------+---------+
 | name        | population | area    |
 +-------------+------------+---------+
 | Afghanistan | 25500100   | 652230  |
 | Algeria     | 37100000   | 2381741 |
 +-------------+------------+---------+
+```
+
 
 # CHALLENGE 4 - 1148
 
 <h3>Article Views I</h3>
 
 Table: Views
-
+```py
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
@@ -164,6 +188,8 @@ Table: Views
 | viewer_id     | int     |
 | view_date     | date    |
 +---------------+---------+
+```
+
 There is no primary key (column with unique values) for this table, the table may have duplicate rows.
 Each row of this table indicates that some viewer viewed an article (written by some author) on some date. 
 Note that equal author_id and viewer_id indicate the same person.
@@ -181,6 +207,7 @@ Example 1:
 
 Input: 
 Views table:
+```py
 +------------+-----------+-----------+------------+
 | article_id | author_id | viewer_id | view_date  |
 +------------+-----------+-----------+------------+
@@ -192,13 +219,18 @@ Views table:
 | 3          | 4         | 4         | 2019-07-21 |
 | 3          | 4         | 4         | 2019-07-21 |
 +------------+-----------+-----------+------------+
+```
+
 Output: 
+```py
 +------+
 | id   |
 +------+
 | 4    |
 | 7    |
 +------+
+```
+
 
 
 # CHALLENGE 5 - 1683
@@ -206,13 +238,15 @@ Output:
 <h3>Invalid Tweets</h3>
 
 Table: Tweets
-
+```py
 +----------------+---------+
 | Column Name    | Type    |
 +----------------+---------+
 | tweet_id       | int     |
 | content        | varchar |
 +----------------+---------+
+```
+
 tweet_id is the primary key (column with unique values) for this table.
 This table contains all the tweets in a social media app.
  
@@ -229,18 +263,24 @@ Example 1:
 
 Input: 
 Tweets table:
+```py
 +----------+----------------------------------+
 | tweet_id | content                          |
 +----------+----------------------------------+
 | 1        | Vote for Biden                   |
 | 2        | Let us make America great again! |
 +----------+----------------------------------+
+```
+
 Output: 
+```py
 +----------+
 | tweet_id |
 +----------+
 | 2        |
 +----------+
+```
+
 Explanation: 
 Tweet 1 has length = 14. It is a valid tweet.
 Tweet 2 has length = 32. It is an invalid tweet.
@@ -251,25 +291,29 @@ Tweet 2 has length = 32. It is an invalid tweet.
 <h3>Replace Employee ID With The Unique Identifier</h3>
 
 Table: Employees
-
+```py
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
 | id            | int     |
 | name          | varchar |
 +---------------+---------+
+```
+
 id is the primary key (column with unique values) for this table.
 Each row of this table contains the id and the name of an employee in a company.
  
 
 Table: EmployeeUNI
-
+```py
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
 | id            | int     |
 | unique_id     | int     |
 +---------------+---------+
+```
+
 (id, unique_id) is the primary key (combination of columns with unique values) for this table.
 Each row of this table contains the id and the corresponding unique id of an employee in the company.
  
@@ -286,6 +330,7 @@ Example 1:
 
 Input: 
 Employees table:
+```py
 +----+----------+
 | id | name     |
 +----+----------+
@@ -295,7 +340,10 @@ Employees table:
 | 90 | Winston  |
 | 3  | Jonathan |
 +----+----------+
+```
+
 EmployeeUNI table:
+```py
 +----+-----------+
 | id | unique_id |
 +----+-----------+
@@ -303,7 +351,10 @@ EmployeeUNI table:
 | 11 | 2         |
 | 90 | 3         |
 +----+-----------+
-Output: 
+```
+
+Output:
+```py
 +-----------+----------+
 | unique_id | name     |
 +-----------+----------+
@@ -313,6 +364,8 @@ Output:
 | 3         | Winston  |
 | 1         | Jonathan |
 +-----------+----------+
+``` 
+
 Explanation: 
 Alice and Bob do not have a unique ID, We will show null instead.
 The unique ID of Meir is 2.
@@ -325,7 +378,7 @@ The unique ID of Jonathan is 1.
  <h3>Product Sales Analysis I </h3>
 
 Table: Sales
-
+```py
 +-------------+-------+
 | Column Name | Type  |
 +-------------+-------+
@@ -335,6 +388,8 @@ Table: Sales
 | quantity    | int   |
 | price       | int   |
 +-------------+-------+
+```
+
 (sale_id, year) is the primary key (combination of columns with unique values) of this table.
 product_id is a foreign key (reference column) to Product table.
 Each row of this table shows a sale on the product product_id in a certain year.
@@ -342,13 +397,15 @@ Note that the price is per unit.
  
 
 Table: Product
-
+```py
 +--------------+---------+
 | Column Name  | Type    |
 +--------------+---------+
 | product_id   | int     |
 | product_name | varchar |
 +--------------+---------+
+```
+
 product_id is the primary key (column with unique values) of this table.
 Each row of this table indicates the product name of each product.
  
@@ -365,6 +422,7 @@ Example 1:
 
 Input: 
 Sales table:
+```py
 +---------+------------+------+----------+-------+
 | sale_id | product_id | year | quantity | price |
 +---------+------------+------+----------+-------+ 
@@ -372,7 +430,10 @@ Sales table:
 | 2       | 100        | 2009 | 12       | 5000  |
 | 7       | 200        | 2011 | 15       | 9000  |
 +---------+------------+------+----------+-------+
+```
+
 Product table:
+```py
 +------------+--------------+
 | product_id | product_name |
 +------------+--------------+
@@ -380,7 +441,10 @@ Product table:
 | 200        | Apple        |
 | 300        | Samsung      |
 +------------+--------------+
+```
+
 Output: 
+```py
 +--------------+-------+-------+
 | product_name | year  | price |
 +--------------+-------+-------+
@@ -388,6 +452,8 @@ Output:
 | Nokia        | 2009  | 5000  |
 | Apple        | 2011  | 9000  |
 +--------------+-------+-------+
+```
+
 Explanation: 
 From sale_id = 1, we can conclude that Nokia was sold for 5000 in the year 2008.
 From sale_id = 2, we can conclude that Nokia was sold for 5000 in the year 2009.
@@ -398,19 +464,21 @@ From sale_id = 7, we can conclude that Apple was sold for 9000 in the year 2011.
 <h3>Customer Who Visited but Did Not Make Any Transactions</h3>
 
 Table: Visits
-
+```py
 +-------------+---------+
 | Column Name | Type    |
 +-------------+---------+
 | visit_id    | int     |
 | customer_id | int     |
 +-------------+---------+
+```
+
 visit_id is the column with unique values for this table.
 This table contains information about the customers who visited the mall.
  
 
 Table: Transactions
-
+```py
 +----------------+---------+
 | Column Name    | Type    |
 +----------------+---------+
@@ -418,6 +486,8 @@ Table: Transactions
 | visit_id       | int     |
 | amount         | int     |
 +----------------+---------+
+```
+
 transaction_id is column with unique values for this table.
 This table contains information about the transactions made during the visit_id.
  
@@ -434,6 +504,7 @@ Example 1:
 
 Input: 
 Visits
+```py
 +----------+-------------+
 | visit_id | customer_id |
 +----------+-------------+
@@ -445,7 +516,10 @@ Visits
 | 7        | 54          |
 | 8        | 54          |
 +----------+-------------+
+```
+
 Transactions
+```py
 +----------------+----------+--------+
 | transaction_id | visit_id | amount |
 +----------------+----------+--------+
@@ -455,7 +529,10 @@ Transactions
 | 12             | 1        | 910    |
 | 13             | 2        | 970    |
 +----------------+----------+--------+
+```
+
 Output: 
+```py
 +-------------+----------------+
 | customer_id | count_no_trans |
 +-------------+----------------+
@@ -463,6 +540,8 @@ Output:
 | 30          | 1              |
 | 96          | 1              |
 +-------------+----------------+
+```
+
 Explanation: 
 Customer with id = 23 visited the mall once and made one transaction during the visit with id = 12.
 Customer with id = 9 visited the mall once and made one transaction during the visit with id = 13.
@@ -478,6 +557,7 @@ As we can see, users with IDs 30 and 96 visited the mall one time without making
 
 Table: Weather
 
+```py
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
@@ -485,6 +565,9 @@ Table: Weather
 | recordDate    | date    |
 | temperature   | int     |
 +---------------+---------+
+```
+
+
 id is the column with unique values for this table.
 There are no different rows with the same recordDate.
 This table contains information about the temperature on a certain day.
@@ -502,6 +585,7 @@ Example 1:
 
 Input: 
 Weather table:
+```py
 +----+------------+-------------+
 | id | recordDate | temperature |
 +----+------------+-------------+
@@ -510,13 +594,18 @@ Weather table:
 | 3  | 2015-01-03 | 20          |
 | 4  | 2015-01-04 | 30          |
 +----+------------+-------------+
-Output: 
+```
+Output:
+```py
 +----+
 | id |
 +----+
 | 2  |
 | 4  |
 +----+
+```
+ 
+
 Explanation: 
 In 2015-01-02, the temperature was higher than the previous day (10 -> 25).
 In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
@@ -528,6 +617,7 @@ In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
 
 Table: Activity
 
+```py
 +----------------+---------+
 | Column Name    | Type    |
 +----------------+---------+
@@ -536,6 +626,8 @@ Table: Activity
 | activity_type  | enum    |
 | timestamp      | float   |
 +----------------+---------+
+```
+
 The table shows the user activities for a factory website.
 (machine_id, process_id, activity_type) is the primary key (combination of columns with unique values) of this table.
 machine_id is the ID of a machine.
@@ -562,6 +654,7 @@ Example 1:
 
 Input: 
 Activity table:
+```py
 +------------+------------+---------------+-----------+
 | machine_id | process_id | activity_type | timestamp |
 +------------+------------+---------------+-----------+
@@ -578,7 +671,10 @@ Activity table:
 | 2          | 1          | start         | 2.500     |
 | 2          | 1          | end           | 5.000     |
 +------------+------------+---------------+-----------+
+```
+
 Output: 
+```py
 +------------+-----------------+
 | machine_id | processing_time |
 +------------+-----------------+
@@ -586,6 +682,8 @@ Output:
 | 1          | 0.995           |
 | 2          | 1.456           |
 +------------+-----------------+
+```
+
 Explanation: 
 There are 3 machines running 2 processes each.
 Machine 0's average time is ((1.520 - 0.712) + (4.120 - 3.140)) / 2 = 0.894
